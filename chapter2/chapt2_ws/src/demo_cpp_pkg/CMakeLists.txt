@@ -14,6 +14,9 @@ find_package(rclcpp REQUIRED)
 
 add_executable(cpp_node src/cpp_node.cpp)
 add_executable(person_node src/person_node.cpp)
+add_executable(learn_auto src/learn_auto.cpp)
+add_executable(learn_shared_ptr src/learn_shared_ptr.cpp)
+add_executable(learn_lambda src/learn_lambda.cpp)
 # ament_target_dependencies is not available in ROS 2 Rolling; link against
 # the imported rclcpp target instead
 target_link_libraries(cpp_node
@@ -23,7 +26,7 @@ target_link_libraries(person_node
   rclcpp::rclcpp
 )
 
-install(TARGETS cpp_node person_node
+install(TARGETS cpp_node person_node learn_auto learn_shared_ptr learn_lambda
   DESTINATION lib/${PROJECT_NAME}
 )
 
