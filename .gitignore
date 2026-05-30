@@ -1,3 +1,4 @@
 build
 install
 log
+!chapter2/chapt_ws/src/demo_cpp_pkg/include
