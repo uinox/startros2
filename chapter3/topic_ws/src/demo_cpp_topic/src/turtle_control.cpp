@@ -6,7 +6,7 @@
 class TurtleController : public rclcpp::Node {
 public:
     TurtleController() : Node("turtle_controller") {
-            velocity_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cm_ve1", 10);
+            velocity_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
             pose_subscription_ = this->create_subscription<turtlesim_msgs::msg::Pose>("/turtle1/pose", 10, std::bind(&TurtleController::on_pose_received_, this, std::placeholders::_1));
     }
 private:
