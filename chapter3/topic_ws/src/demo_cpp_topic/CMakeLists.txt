@@ -9,16 +9,23 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(turtlesim REQUIRED)
+find_package(turtlesim_msgs REQUIRED)
 add_executable(turtle_circle src/turtle_circle.cpp)
+add_executable(turtle_control src/turtle_control.cpp)
 # ament_target_dependencies(turtle_circle rclcpp geometry_msgs)
-target_link_libraries(turtle_circle 
+target_link_libraries(turtle_circle
   PRIVATE 
     rclcpp::rclcpp 
     geometry_msgs::geometry_msgs
 )
+target_link_libraries(turtle_control 
+  PRIVATE 
+    rclcpp::rclcpp 
+    geometry_msgs::geometry_msgs
+    turtlesim_msgs::turtlesim_msgs
+)
 
-install(TARGETS turtle_circle DESTINATION lib/${PROJECT_NAME})
+install(TARGETS turtle_circle turtle_control DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
