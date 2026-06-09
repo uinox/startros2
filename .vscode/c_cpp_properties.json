@@ -5,10 +5,14 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/ros/rolling/include/**",
-                "${workspaceFolder}/install/**/include/**"
+                "${workspaceFolder}/install/**/include/**",
+                "/usr/include/aarch64-linux-gnu/qt5",
+                "/usr/include/aarch64-linux-gnu/qt5/QtCore",
+                "/usr/include/aarch64-linux-gnu/qt5/QtGui",
+                "/usr/include/aarch64-linux-gnu/qt5/QtWidgets"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-arm64"
