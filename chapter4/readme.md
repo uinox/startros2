@@ -137,4 +137,26 @@ entry_points添加
 
     colcon build --packages-select chapt4_interfaces --allow-overriding chapt4_interfaces
 
-    
+测试：
+运行小乌龟
+ros2 run turtlesim turtlesim_node
+运行服务
+ros2 run demo_cpp_service turtle_control
+命令行请求服务
+ros2 service call /partol chapt4_interface/srv/Patrol "{target_x: 10.0, target_y: 10.0}"
+就可以看到小乌龟运行到指定的位置了
+
+### 3. 客户端代码实现
+在src/demo_cpp_service/src下添加patrol_client.cpp
+编写代码
+
+编译运行
+运行小乌龟
+ros2 run turtlesim turtlesim_node
+运行服务
+ros2 run demo_cpp_service turtle_control
+运行客户端
+ros2 run demo_cpp_service patrol_client
+
+
+## 4.4 在python中使用参数
